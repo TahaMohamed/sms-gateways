@@ -6,14 +6,31 @@ class BaseSMS
 {
     protected $client;
     protected $headers;
-    protected $data;
-
-    protected $numbers;
+    /**
+     * The numbers which gateway send to.
+     *
+     * @var array
+     */
+    protected $numbers = [];
+    /**
+     * The message will send to numbers.
+     *
+     * @var string
+     */
     protected $message;
+    /**
+     * The credentials to send sms.
+     *
+     * @var array
+     */
     protected $credentials;
-    protected $datetime=[];
+    protected $datetime = [];
     public static $instance;
-
+    /**
+     * Create a new gateway instance and set credentials if pass.
+     *
+     * @return void
+     */
     public function __construct(array $credentials=[]) 
     {
         if ($credentials) {
@@ -27,6 +44,12 @@ class BaseSMS
         $this->addDatetime();
     }
 
+    /**
+     * Create instance if not exists and set credentials.
+     *
+     * @param  array
+     * @return $this
+     */
     public static function create(array $credentials = [])
     {
         if (self::$instance === null) {
@@ -41,23 +64,9 @@ class BaseSMS
         return $this;
     }
 
-    public function addNumber($number)
-    {
-        $this->numbers[] = $number;
-        return $this;
-    }
-
-    public function addNumbers(array $numbers)
-    {
-        foreach ($numbers as $number) {
-            $this->addNumber($number);
-        }
-        return $this;
-    }
-
     public function to($numbers)
     {
-        $this->numbers[] = is_array($numbers) ? $numbers : func_get_args();
+        $this->numbers = array_merge($this->numbers , is_array($numbers) ? $numbers : func_get_args());
         return $this;
     }
 

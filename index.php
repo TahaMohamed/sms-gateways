@@ -6,7 +6,8 @@ use TahaMohamed\SMS\Message;
 require_once 'vendor/autoload.php';
 
 $credentials = ['username' => 'taha' , 'password' => 'mohamed', 'sender' => '12345'];
-$gateway_sms = Hisms::create($credentials)
+$gateway_sms = Hisms::create($credentials) 
+    // Or NewPowers::create($credentials) , SMSGateway::create($credentials)
     // Or set like this 
     // ->setCredentials($credentials)
     ->to(96651111111111)
