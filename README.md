@@ -18,9 +18,10 @@ You can install **sms-gateways** via composer or by downloading the source.
 use TahaMohamed\SMS\Gateways\Hisms;
 use TahaMohamed\SMS\Message;
 
-# returns 'hisms config'
+# returns 'gateway config'
 $credentials = ['username' => 'taha' , 'password' => 'mohamed', 'sender' => '12345'];
 $gateway_sms = Hisms::create($credentials)
+    // Or NewPowers::create($credentials) , SMSGateway::create($credentials)
     // Or set like this 
     // ->setCredentials($credentials)
     ->to(96651111111111)
