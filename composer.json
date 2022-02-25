@@ -1,0 +1,28 @@
+{
+    "name": "tahamohamed/sms-gateways",
+    "description": "Send SMS using multiple SMS gateways",
+    "keywords": [
+        "framework",
+        "sms",
+        "gateways",
+        "web service"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Taha Mohamed",
+            "email": "taha.mohamed2016@gmail.com",
+            "homepage": "https://github.com/TahaMohamed"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TahaMohamed\\SMS\\" : "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}
