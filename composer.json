@@ -5,7 +5,8 @@
         "framework",
         "sms",
         "gateways",
-        "web service"
+        "api",
+        "php"
     ],
     "license": "MIT",
     "authors": [
