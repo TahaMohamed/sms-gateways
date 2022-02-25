@@ -23,11 +23,11 @@ $credentials = ['username' => 'taha' , 'password' => 'mohamed', 'sender' => '123
 $gateway_sms = Hisms::create($credentials)
     // Or set like this 
     // ->setCredentials($credentials)
-    ->addNumber(3526262762)
+    ->to(96651111111111)
     // Or add Multiple 
-    ->addNumbers([56677,78999])
+    ->to([96650000000,96659999999])
     ->addDatetime(['date' => date('Y-m-d'), 'time' => date('H:i')])
-    ->addMessage('sdkdkdkdkdkd');
+    ->addMessage('asd asd asd');
 
 # returns 'response from gateway'
 $response = Message::send($gateway_sms);
