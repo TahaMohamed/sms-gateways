@@ -6,8 +6,15 @@ use TahaMohamed\SMSGateway\Contracts\Message;
 
 class SMSGateway
 {
-    public static function send(Message $gateway)
+    private $credentials;
+
+    public function __construct(array $credentials)
     {
-        return $gateway->send();
+        $this->credentials = $credentials;
+    }
+
+    public function send(Message $gateway)
+    {
+        return $gateway->setCredentials($this->credentials)->send();
     }
 }

@@ -32,7 +32,7 @@ class SMSGatewayServiceProvider extends ServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('smsgateway', function ($app) {
-            return new SMSGateway;
+            $gateway = new SMSGateway(@$app['config']['smsgateway']);
         });
     }
 
