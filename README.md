@@ -11,7 +11,7 @@ Send SMS using multiple gateways like(hisms, smsGateway, netPowers, ...).
 
 ### Via Composer
 
-``` bash
+```
 $ composer require tahamohamed/smsgateway
 ```
 
