@@ -12,20 +12,64 @@ Send SMS using multiple gateways like(hisms, smsGateway, netPowers, ...).
 ### Via Composer
 
 ```
-$ composer require tahamohamed/smsgateway
+composer require tahamohamed/smsgateway
 ```
 
+Then create config file named `smsgateway.php` in `config` directory or you can use
+```
+php artisan vendor:publish --tag=smsgateway.config
+```
+## Configuration
+
+You need to add credentials of gateway(s) in `smsgateway.php` file that will use.
+
+```php
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | hisms App Credentials
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
+    'hisms' => [
+        'username' => env('SMS_HISMS_USERNAME',''),
+        'password' => env('SMS_HISMS_PASSWORD',''),
+        'sender' => env('SMS_HISMS_SENDER','')
+    ],
+    /*
+    |--------------------------------------------------------------------------
+    | netpowers App Credentials
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
+    'netpowers' => [
+        'username' => env('SMS_HISMS_USERNAME',''),
+        'password' => env('SMS_HISMS_PASSWORD',''),
+        'sender' => env('SMS_HISMS_SENDER','')
+    ],
+    /*
+    |--------------------------------------------------------------------------
+    | smsgateway App Credentials
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
+    'smsgateway' => [
+        'username' => env('SMS_SMSGATEWAY_USERNAME',''),
+        'password' => env('SMS_SMSGATEWAY_PASSWORD',''),
+        'sender' => env('SMS_SMSGATEWAY_SENDER','')
+    ],
+];
+```
 ## Usage
 
 ```php
 # returns 'gateway config'
-$credentials = ['username' => 'taha' , 'password' => 'mohamed', 'sender' => '12345'];
-$gateway_sms = Hisms::create($credentials)
-    // Or NetPowers::create($credentials) , AppGateway::create($credentials)
-    // Or set like this
-    // ->setCredentials($credentials)
-    ->to(96651111111111)
-    // Or add Multiple
+$gateway_sms = AppGateway::to(96651111111111)
+    // Or NetPowers::to(), AppGateway::to()
+    // Or Add Multiple Numbers
     ->to([96650000000,96659999999])
     ->addDatetime(['date' => date('Y-m-d'), 'time' => date('H:i')])
     ->addMessage('asd asd asd');
