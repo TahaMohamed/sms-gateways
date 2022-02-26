@@ -25,43 +25,20 @@ class BaseSMS
      */
     protected $credentials;
     protected $datetime = [];
-    public static $instance;
     /**
      * Create a new gateway instance and set credentials if pass.
      *
      * @return void
      */
-    public function __construct(array $credentials=[])
+    public function __construct(array $credentials)
     {
-        if ($credentials) {
-            $this->setCredentials($credentials);
-        }
+        $this->setCredentials($credentials);
         $this->client = new \GuzzleHttp\Client();
         $this->headers = ['headers' => [
             'Accept' => 'application/json',
            'Content-Type' => 'application/json'
         ]];
         $this->addDatetime();
-    }
-
-    /**
-     * Create instance if not exists and set credentials.
-     *
-     * @param  array
-     * @return $this
-     */
-    public static function create(array $credentials = [])
-    {
-        if (self::$instance === null) {
-            self::$instance = new static($credentials);
-        }
-        return self::$instance;
-    }
-
-    public function setCredentials(array $credentials)
-    {
-        $this->credentials = $credentials;
-        return $this;
     }
 
     public function to($numbers)

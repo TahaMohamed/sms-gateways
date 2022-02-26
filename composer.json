@@ -37,9 +37,9 @@
             ],
             "aliases": {
                 "SMSGateway": "TahaMohamed\\SMSGateway\\Facades\\SMSGateway",
-                "Hisms": "TahaMohamed\\SMSGateway\\Gateways\\Hisms",
-                "NetPowers": "TahaMohamed\\SMSGateway\\Gateways\\NetPowers",
-                "AppGateway": "TahaMohamed\\SMSGateway\\Gateways\\SMSGateway"
+                "Hisms": "TahaMohamed\\SMSGateway\\Facades\\Hisms",
+                "NetPowers": "TahaMohamed\\SMSGateway\\Facades\\NetPowers",
+                "AppGateway": "TahaMohamed\\SMSGateway\\Facades\\AppGateway"
             }
         }
     }
