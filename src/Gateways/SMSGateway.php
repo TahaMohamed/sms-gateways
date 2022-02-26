@@ -24,7 +24,7 @@ class SMSGateway extends BaseSMS implements Message
 
     public function send()
     {
-        return $this->client->request(
+        $response = $this->client->request(
             'POST',
             self::APIURL,
             [
@@ -32,5 +32,7 @@ class SMSGateway extends BaseSMS implements Message
             ],
             $this->headers
         );
+
+        return $response->getBody()->getContents();
     }
 }
