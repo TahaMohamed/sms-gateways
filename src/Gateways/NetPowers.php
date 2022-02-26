@@ -1,14 +1,14 @@
 <?php
 
-namespace TahaMohamed\SMS\Gateways;
+namespace TahaMohamed\SMSGateway\Gateways;
 
-use TahaMohamed\SMS\Contracts\BaseSMS;
-use TahaMohamed\SMS\Contracts\Imessage;
+use TahaMohamed\SMSGateway\Contracts\BaseSMS;
+use TahaMohamed\SMSGateway\Contracts\Message;
 
-class NewPowers extends BaseSMS implements Imessage
+class NetPowers extends BaseSMS implements Message
 {
     const APIURL = 'Http://sms.netpowers.net/http/api.php';
-    
+
     public function setCredentials(array $credentials)
     {
         $this->credentials['id'] = $credentials['username'];
@@ -16,7 +16,7 @@ class NewPowers extends BaseSMS implements Imessage
         $this->credentials['sender'] = $credentials['sender'];
         return $this;
     }
-    
+
     public function addDatetime($datetime = [])
     {
         if (!$datetime) {

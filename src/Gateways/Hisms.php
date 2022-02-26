@@ -1,14 +1,14 @@
 <?php
 
-namespace TahaMohamed\SMS\Gateways;
+namespace TahaMohamed\SMSGateway\Gateways;
 
-use TahaMohamed\SMS\Contracts\BaseSMS;
-use TahaMohamed\SMS\Contracts\Imessage;
+use TahaMohamed\SMSGateway\Contracts\BaseSMS;
+use TahaMohamed\SMSGateway\Contracts\Message;
 
-class Hisms extends BaseSMS implements Imessage
+class Hisms extends BaseSMS implements Message
 {
     const APIURL = 'http://hisms.ws/api.php';
-    
+
     public function setCredentials(array $credentials)
     {
         $this->credentials['username'] = $credentials['username'];
@@ -16,7 +16,7 @@ class Hisms extends BaseSMS implements Imessage
         $this->credentials['sender'] = $credentials['sender'];
         return $this;
     }
-    
+
     public function addDatetime($datetime = [])
     {
         if (!$datetime) {

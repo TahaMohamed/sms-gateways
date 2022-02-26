@@ -1,13 +1,6 @@
 {
-    "name": "tahamohamed/sms-gateways",
+    "name": "tahamohamed/smsgateway",
     "description": "Send SMS using multiple SMS gateways",
-    "keywords": [
-        "framework",
-        "sms",
-        "gateways",
-        "api",
-        "php"
-    ],
     "license": "MIT",
     "authors": [
         {
@@ -16,13 +9,36 @@
             "homepage": "https://github.com/TahaMohamed"
         }
     ],
+    "homepage": "https://github.com/TahaMohamed/smsgateway",
+    "keywords": ["Laravel", "SMSGateway", "sms", "hisms"],
+    "require": {
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0|^9.0",
+        "orchestra/testbench": ">=3.8"
+    },
     "autoload": {
         "psr-4": {
-            "TahaMohamed\\SMS\\" : "src/"
+            "TahaMohamed\\SMSGateway\\": "src/"
         }
     },
-    "require": {
-        "php": ">=5.5.9",
-        "guzzlehttp/guzzle": "^7.4"
+    "autoload-dev": {
+        "psr-4": {
+            "TahaMohamed\\SMSGateway\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TahaMohamed\\SMSGateway\\SMSGatewayServiceProvider"
+            ],
+            "aliases": {
+                "SMSGateway": "TahaMohamed\\SMSGateway\\Facades\\SMSGateway",
+                "Hisms": "TahaMohamed\\SMSGateway\\Gateways\\Hisms",
+                "NetPowers": "TahaMohamed\\SMSGateway\\Gateways\\NetPowers",
+                "smsGateway": "TahaMohamed\\SMSGateway\\Gateways\\smsGateway"
+            }
+        }
     }
 }

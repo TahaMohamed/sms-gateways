@@ -1,14 +1,14 @@
 <?php
 
-namespace TahaMohamed\SMS\Gateways;
+namespace TahaMohamed\SMSGateway\Gateways;
 
-use TahaMohamed\SMS\Contracts\BaseSMS;
-use TahaMohamed\SMS\Contracts\Imessage;
+use TahaMohamed\SMSGateway\Contracts\BaseSMS;
+use TahaMohamed\SMSGateway\Contracts\Message;
 
-class SMSGateway extends BaseSMS implements Imessage
+class SMSGateway extends BaseSMS implements Message
 {
     const APIURL = 'https://apps.gateway.sa/vendorsms/pushsms.aspx';
-    
+
     public function setCredentials(array $credentials)
     {
         $this->credentials['user'] = $credentials['username'];

@@ -1,43 +1,70 @@
-# SMS Gateways
+# SMSGateway
 
-Send SMS using multiple gateways like(hisms, smsGateway, newPowers, ...)
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Total Downloads][ico-downloads]][link-downloads]
+[![Build Status][ico-travis]][link-travis]
+[![StyleCI][ico-styleci]][link-styleci]
 
-## Installation 
-You can install **sms-gateways** via composer or by downloading the source.
+Send SMS using multiple gateways like(hisms, smsGateway, newPowers, ...).
 
-### Via Composer:
+## Installation
 
-**sms-gateways** is available on Packagist as the
-[`tahamohamed/sms-gateways`](https://packagist.org/packages/tahamohamed/sms-gateways) package:
-```
- composer require tahamohamed/sms-gateways
+### Via Composer
+
+``` bash
+$ composer require tahamohamed/smsgateway
 ```
 
 ## Usage
-```php
-use TahaMohamed\SMS\Gateways\Hisms;
-use TahaMohamed\SMS\Message;
 
+```php
 # returns 'gateway config'
 $credentials = ['username' => 'taha' , 'password' => 'mohamed', 'sender' => '12345'];
 $gateway_sms = Hisms::create($credentials)
-    // Or NewPowers::create($credentials) , SMSGateway::create($credentials)
-    // Or set like this 
+    // Or NetPowers::create($credentials) , SMSGateway::create($credentials)
+    // Or set like this
     // ->setCredentials($credentials)
     ->to(96651111111111)
-    // Or add Multiple 
+    // Or add Multiple
     ->to([96650000000,96659999999])
     ->addDatetime(['date' => date('Y-m-d'), 'time' => date('H:i')])
     ->addMessage('asd asd asd');
 
 # returns 'response from gateway'
-$response = Message::send($gateway_sms);
+$response = SMSGateway::send($gateway_sms);
+```
+
+
+## Change log
+
+Please see the [changelog](changelog.md) for more information on what has changed recently.
+
+## Testing
+
+``` bash
+$ composer test
 ```
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+Please see [contributing.md](contributing.md) for details and a todolist.
+
+## Security
+
+If you discover any security related issues, please email author@email.com instead of using the issue tracker.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+
+MIT. Please see the [MIT](https://choosealicense.com/licenses/mit/) for more information.
+
+[ico-version]: https://img.shields.io/packagist/v/tahamohamed/smsgateway.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/tahamohamed/smsgateway.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/tahamohamed/smsgateway/master.svg?style=flat-square
+[ico-styleci]: https://styleci.io/repos/12345678/shield
+
+[link-packagist]: https://packagist.org/packages/tahamohamed/smsgateway
+[link-downloads]: https://packagist.org/packages/tahamohamed/smsgateway
+[link-travis]: https://travis-ci.org/tahamohamed/smsgateway
+[link-styleci]: https://styleci.io/repos/12345678
+[link-author]: https://github.com/tahamohamed
+[link-contributors]: ../../contributors

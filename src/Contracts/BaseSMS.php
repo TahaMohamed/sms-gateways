@@ -1,6 +1,6 @@
 <?php
 
-namespace TahaMohamed\SMS\Contracts;
+namespace TahaMohamed\SMSGateway\Contracts;
 
 class BaseSMS
 {
@@ -31,10 +31,10 @@ class BaseSMS
      *
      * @return void
      */
-    public function __construct(array $credentials=[]) 
+    public function __construct(array $credentials=[])
     {
         if ($credentials) {
-            $this->setCredentials($credentials);          
+            $this->setCredentials($credentials);
         }
         $this->client = new \GuzzleHttp\Client();
         $this->headers = ['headers' => [
@@ -60,7 +60,7 @@ class BaseSMS
 
     public function setCredentials(array $credentials)
     {
-        $this->credentials = $credentials; 
+        $this->credentials = $credentials;
         return $this;
     }
 
