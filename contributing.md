@@ -2,7 +2,7 @@
 
 Contributions are welcome and will be fully credited.
 
-Contributions are accepted via Pull Requests on [Github](https://github.com/tahamohamed/smsgateway).
+Contributions are accepted via Pull Requests on [Github](https://github.com/TahaMohamed/sms-gateways).
 
 # Things you could do
 If you want to contribute but do not know where to start, this list provides some starting points.
