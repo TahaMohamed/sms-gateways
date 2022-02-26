@@ -5,7 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci] -->
 
-Send SMS using multiple gateways like(hisms, smsGateway, newPowers, ...).
+Send SMS using multiple gateways like(hisms, smsGateway, netPowers, ...).
 
 ## Installation
 
