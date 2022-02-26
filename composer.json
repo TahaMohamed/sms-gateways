@@ -39,7 +39,7 @@
                 "SMSGateway": "TahaMohamed\\SMSGateway\\Facades\\SMSGateway",
                 "Hisms": "TahaMohamed\\SMSGateway\\Gateways\\Hisms",
                 "NetPowers": "TahaMohamed\\SMSGateway\\Gateways\\NetPowers",
-                "SMSGateway": "TahaMohamed\\SMSGateway\\Gateways\\SMSGateway"
+                "AppGateway": "TahaMohamed\\SMSGateway\\Gateways\\SMSGateway"
             }
         }
     }
