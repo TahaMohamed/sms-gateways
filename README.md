@@ -40,13 +40,13 @@ Please see [contributing.md](contributing.md) for details and a todolist.
 
 ## Security
 
-If you discover any security related issues, please email author@email.com instead of using the issue tracker.
+If you discover any security related issues, please email taha.mohamed2016@gmail.com instead of using the issue tracker.
 
 ## License
 
 MIT. Please see the [MIT](https://choosealicense.com/licenses/mit/) for more information.
-
-<!-- [ico-version]: https://img.shields.io/packagist/v/tahamohamed/smsgateway.svg?style=flat-square
+<!--
+[ico-version]: https://img.shields.io/packagist/v/tahamohamed/smsgateway.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/tahamohamed/smsgateway.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/tahamohamed/smsgateway/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
