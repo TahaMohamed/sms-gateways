@@ -68,11 +68,25 @@ return [
 ```php
 # returns 'gateway config'
 $gateway_sms = AppGateway::to(96651111111111)
-    // Or NetPowers::to(), AppGateway::to()
+    // Or NetPowers::to(), Hisms::to()
     // Or Add Multiple Numbers
     ->to([96650000000,96659999999])
     ->addDatetime(['date' => date('Y-m-d'), 'time' => date('H:i')])
     ->addMessage('asd asd asd');
+
+# returns 'response from gateway'
+$response = SMSGateway::send($gateway_sms);
+```
+### Hisms
+
+Please see [Hisms docs](https://www.hisms.ws/uploads/api.pdf) for more details.
+
+```php
+# returns 'gateway config'
+$gateway_sms = Hisms::changePassword('new_password');
+// Or Hisms::forgetPassword();
+// Or Hisms::deleteScheduleSMS();
+// Or Hisms::getBalance();
 
 # returns 'response from gateway'
 $response = SMSGateway::send($gateway_sms);

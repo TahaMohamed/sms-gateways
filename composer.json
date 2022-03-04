@@ -10,7 +10,7 @@
         }
     ],
     "homepage": "https://github.com/TahaMohamed/smsgateway",
-    "keywords": ["Laravel", "SMSGateway", "sms", "hisms"],
+    "keywords": ["Laravel", "SMSGateway", "sms", "hisms","netpowers"],
     "require": {
         "php": "^7.1|^8.0",
         "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0",
